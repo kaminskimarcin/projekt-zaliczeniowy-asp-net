@@ -1,0 +1,60 @@
+@page
+@model workday.Pages_VacationRequest.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+
+    <h1>Akceptacja wniosku dla: @Model.VacationRequest.Name</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="VacationRequest.ID" />
+                <div class="form-group">
+                    <label asp-for="VacationRequest.Name" class="control-label"></label>
+                    <input asp-for="VacationRequest.Name" readonly class="form-control" />
+                    <span asp-validation-for="VacationRequest.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VacationRequest.DateOfRequest" class="control-label"></label>
+                    <input asp-for="VacationRequest.DateOfRequest" readonly class="form-control" />
+                    <span asp-validation-for="VacationRequest.DateOfRequest" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VacationRequest.From" class="control-label"></label>
+                    <input asp-for="VacationRequest.From" readonly class="form-control" />
+                    <span asp-validation-for="VacationRequest.From" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VacationRequest.To" class="control-label"></label>
+                    <input asp-for="VacationRequest.To" readonly class="form-control" />
+                    <span asp-validation-for="VacationRequest.To" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="VacationRequest.status" class="control-label"></label>
+                    <input type="checkbox" asp-for="VacationRequest.status" class="form-control" />
+                    <span asp-validation-for="VacationRequest.status" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./Index">Wróć do listy wniosków</a>
+    </div>
+</div>
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="main-page h-75">
+    <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Nowy pracownik</h5>
+        <p class="card-text">Wprowadź dane nowego pracownika do systemu.</p>
+        <a href="/Employees/create" class="btn btn-primary">Dodaj</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Przeglądaj</h5>
+        <p class="card-text">Zobacz listę wszystkich pracowników</p>
+        <a href="/Employees" class="btn btn-primary">Przejdź do listy</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Wnioski</h5>
+        <p class="card-text">Przeglądaj wnioski urlopowe</p>
+        <a href="/VacationRequest" class="btn btn-primary">Przejdź do wniosków</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>

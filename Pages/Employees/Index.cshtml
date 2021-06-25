@@ -1,0 +1,63 @@
+@page
+@model workday.Pages_Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+<h1>Lista pracowników</h1>
+
+<p>
+    <a asp-page="Create">Wprowadź dane nowego pracownika</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Imię i nazwisko
+            </th>
+            <th>
+                Data urodzenia
+            </th>
+            <th>
+                Stanowisko
+            </th>
+            <th>
+                Wynagrodzenie
+            </th>
+            <th>
+                Pesel
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Employee) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edytuj</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Szczegóły pracownika</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Usuń pracownika</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>
